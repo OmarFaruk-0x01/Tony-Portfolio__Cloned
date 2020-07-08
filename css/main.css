@@ -141,6 +141,7 @@ h2, h3, h4, .home-text__div h3 {
           justify-content: center;
   background-color: #d9832e;
   z-index: 1000000;
+  overflow: hidden;
 }
 
 .preloader--icon span {
@@ -341,7 +342,6 @@ h2, h3, h4, .home-text__div h3 {
 }
 
 .home {
-  width: 100vw;
   height: 100vh;
   background: url("../imgs/home-banner.jpg") no-repeat center center/cover;
   display: -webkit-box;
@@ -1705,6 +1705,9 @@ h2, h3, h4, .home-text__div h3 {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
+  .contact-content__box.--info {
+    padding-right: 10px;
+  }
   .contact-content__box.box1 {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -1717,6 +1720,10 @@ h2, h3, h4, .home-text__div h3 {
 }
 
 @media screen and (max-width: 576px) {
+  .home {
+    background-position-x: left;
+    background-size: 100vw 100vh;
+  }
   .container {
     padding: 0 0;
   }
