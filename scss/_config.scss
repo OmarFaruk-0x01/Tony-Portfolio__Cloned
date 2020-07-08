@@ -1,0 +1,104 @@
+$p-color: #d9832e;
+$p-color-light: #d9842e98;
+$s-color: #090a0c;
+$s-color-light: #090a0c18;
+$w-color: #fff;
+$gray-color: #555a64;
+$light-gray: #eaedf2;
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+a{
+    text-decoration: none;
+    color: $s-color;
+}
+
+h2, h3, h4{
+    font-size: 16px;
+}
+
+@mixin transition-ease($d: .3s) {
+    transition: all $d linear;
+    
+}
+
+@mixin center-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+@mixin animation-rotate($direction,$du-time: .5s, $an-type: linear, $how-mouch: infinite){
+    @if ($direction == "left"){
+        animation: animate-rotate-left $du-time $an-type $how-mouch;
+    }@else{
+        animation: animate-rotate-right $du-time $an-type $how-mouch;
+    }
+}
+
+@keyframes animate-rotate-left {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-rotate-right {
+    from{
+        transform: rotate(0) scale(2.2);
+    }
+    to{
+        transform: scale(2.2) rotate(-360deg) ;
+    }
+}
+
+@keyframes text-effect{
+    0%{
+        width: 0;
+    }
+    50%{
+        width: 90px;
+    }
+    100%{
+        width: 0;
+    }
+};
+@keyframes cursor-effect{
+    from{
+        border-right-color: rgba(0,0,0,0.9);
+    }
+    to{
+        border-right-color: rgba(0,0,0,0);
+
+    }
+}
+
+@keyframes move-down{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+@mixin media($breakpoint) {
+    @media screen and (max-width: $breakpoint){
+        @content;
+    }
+    
+}

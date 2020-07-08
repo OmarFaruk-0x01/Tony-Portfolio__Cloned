@@ -1,0 +1,39 @@
+.preloader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $p-color;
+    z-index: 1000000;
+    // overflow: hidden;
+    &--icon{
+        span{
+            position: relative;
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-left: 3px solid $w-color;
+            border-right: 3px solid $w-color;
+            border-radius: 50%;
+            @include animation-rotate('left');
+            
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: -3px;
+                left: 0;
+                transform: scale(1.5);
+                border-top: 3px solid $w-color;
+                border-bottom: 3px solid $w-color;
+                border-radius: 50%;
+                
+            }
+        }
+    }
+}

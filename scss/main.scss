@@ -1,0 +1,39 @@
+@import "config";
+@import "preloader";
+@import "header";
+@import "mobile-header";
+@import "sectionHeader";
+@import "home";
+@import "about";
+@import "skills";
+@import "services";
+@import "works";
+@import "blogs";
+@import "contact";
+@import "footer";
+@import "responcive";
+
+body,
+html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Baloo 2", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  scroll-behavior: smooth;
+}
+
+main {
+  width: 100%;
+  padding-left: 90px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}

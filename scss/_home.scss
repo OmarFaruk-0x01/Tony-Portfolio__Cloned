@@ -1,0 +1,90 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  background: url("../imgs/home-banner.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  .container{
+    display: flex;
+  align-items: center;
+  }
+  &-text__div {
+    width: 50%;
+    padding: 30px;
+
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: 4.2rem;
+      line-height: 1;
+      padding: 0 0 15px;
+      font-weight: 600;
+    }
+    h3 {
+      @extend h4;
+    }
+    p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    &--animText {
+      position: relative;
+      overflow: hidden;
+      top: 5px;
+      line-height: 1;
+      border-right: 2px solid $s-color;
+      display: inline-block;
+      white-space: nowrap;
+      animation: text-effect 5s steps(12, end) 1s infinite normal both,
+        cursor-effect 0.5s steps(12, end) infinite;
+    }
+  }
+  #{&}-text-btns {
+    display: flex;
+
+    &__btn {
+      padding: 8px 20px;
+      font-size: 1rem;
+      margin: 10px 10px 0 0;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      @include transition-ease;
+    }
+    &__btn:nth-child(1) {
+      background-color: $p-color;
+      color: $w-color;
+      &:hover {
+        background-color: $s-color;
+      }
+    }
+    &__btn:nth-child(2) {
+      border: 1px solid $p-color;
+      background-color: transparent;
+      color: $p-color;
+      &:hover {
+        background-color: $p-color;
+        color: $w-color;
+      }
+    }
+  }
+
+  &-down__btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    color: $w-color;
+    background-color: $p-color-light;
+    animation: move-down 1s linear infinite;
+    cursor: pointer;
+  }
+}

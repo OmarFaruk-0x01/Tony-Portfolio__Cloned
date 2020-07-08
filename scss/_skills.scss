@@ -1,0 +1,75 @@
+.skills {
+  padding: 40px 30px;
+
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &--left {
+      padding-right: 40px;
+    }
+    &-progressbarDiv {
+      margin-bottom: 20px;
+      line-height: 2;
+      h2 {
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    }
+    &__progressbar {
+      position: relative;
+      width: 100%;
+      height: 5px;
+      background-color: rgba($color: #000000, $alpha: 0.1);
+      .progress {
+        position: relative;
+        height: 100%;
+        background-color: $p-color;
+        @for $i from 1 through 100 {
+          &[data-value="#{$i}"] {
+            width: #{$i + "%"};
+          }
+        }
+        &::before {
+          content: attr(data-value)"%";
+          height: 100%;
+          position: absolute;
+          top: -28px;
+          right: 0;
+        }
+      }
+    }
+
+
+    &--right{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: minmax(40px , auto);
+        gap: 0 2rem;
+        align-items: end;
+    }
+    &--funfactsDiv{
+        width: 200px;
+        height: 100px;
+        border: 2px solid $p-color;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        span{
+            font-size: 1.2rem;
+        }
+        .icon{
+            font-size: 2rem;
+            margin-right: 20px;
+            color: $p-color;
+        }
+
+        &:nth-child(odd){
+            justify-self: flex-end;
+        }
+    }
+
+  }
+}

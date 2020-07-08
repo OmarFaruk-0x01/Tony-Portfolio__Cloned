@@ -1,0 +1,100 @@
+.blogs {
+  padding: 50px 30px;
+  background-color: $w-color;
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+
+    &__item {
+      position: relative;
+      border-radius: 4px;
+      @include transition-ease(0.2s);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+
+        .image-div {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            transform: scale(1.2);
+            @include transition-ease;
+          }
+        }
+
+        &:hover img {
+          transform: scale(1.5);
+        }
+      }
+
+      .text {
+        position: relative;
+        top: -30px;
+        left: 0;
+        width: 95%;
+        margin: 0px auto;
+        background-color: $w-color;
+        @include transition-ease(0.2s);
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.19);
+        padding: 20px;
+        .date {
+          padding: 3px 10px;
+          color: $w-color;
+          background-color: $p-color;
+          position: absolute;
+          top: -27px;
+          left: 0;
+          font-size: 0.8rem;
+          font-weight: 400;
+        }
+
+        .tags {
+          list-style: none;
+          display: flex;
+
+          .tag {
+            border: 1px solid $light-gray;
+            font-size: 0.8rem;
+            font-weight: 300;
+            padding: 1px 6px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            color: $gray-color;
+          }
+        }
+
+        h2 {
+          a {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.7;
+          }
+        }
+        p {
+          color: $gray-color;
+        }
+        & > a {
+          font-size: 1rem;
+          font-weight: 400;
+          text-decoration: underline;
+          line-height: 1.5;
+          margin: 5px 0px;
+          color: $p-color;
+
+          &:hover {
+            color: $s-color;
+          }
+        }
+      }
+    }
+  }
+}

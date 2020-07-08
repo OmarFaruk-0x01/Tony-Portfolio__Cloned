@@ -1,0 +1,120 @@
+.contact {
+  padding: 80px 30px;
+  background-color: $light-gray;
+  &-content {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-auto-rows: 90px;
+    gap: 1rem 3rem;
+
+    &__box {
+      background-color: $w-color;
+      &.--info {
+        display: flex;
+        align-items: center;
+        padding: 20px 0px;
+        .icon {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: $p-color;
+          margin: 10px 10px 0px 10px;
+          border-radius: 50%;
+          color: $w-color;
+          align-self: center;
+        }
+
+        h2 {
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+        p {
+          line-height: 1.5;
+          font-size: .9rem;
+          color: $gray-color;
+        }
+      }
+
+      &.box1 {
+        grid-row: 1/4;
+
+        .form {
+          width: 100%;
+          padding: 20px;
+          &-group {
+            position: relative;
+            input,
+            textarea {
+              display: block;
+              position: relative;
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+                sans-serif;
+              width: 100%;
+              font-size: 1.2rem;
+              font-weight: 300;
+              margin: 0px 0px;
+              padding: 10px 10px;
+              border-bottom: 0.5px solid rgba(0, 0, 0, 0.15);
+              z-index: 5;
+              &:focus {
+                border: 0;
+              }
+              &:focus + span {
+                transform: translateX(0);
+                width: 100%;
+                border: 0;
+              }
+            }
+            span {
+              display: block;
+              position: relative;
+              top: 0;
+              width: 0%;
+              height: 2px;
+              transform-origin: 50% 100%;
+              transform: translateX(100%);
+              background-color: $p-color;
+              @include transition-ease;
+            }
+
+            textarea {
+              width: 100%;
+              height: 100px;
+              resize: none;
+              margin-bottom: 2px;
+            }
+
+            &.send-btn {
+              input[type="submit"] {
+                width: fit-content;
+                margin: 10px 0;
+                color: $w-color;
+                font-weight: 400;
+                cursor: pointer;
+                background-color: $p-color;
+                @include transition-ease;
+
+                &:hover{
+                    background-color: $s-color;
+                }
+
+              }
+            }
+            @for $i from 1 through 2 {
+              &:nth-child(#{$i}) {
+                float: left;
+                width: 47%;
+                &:nth-child(1) {
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

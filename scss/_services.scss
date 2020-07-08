@@ -1,0 +1,56 @@
+.service{
+    padding: 50px 30px;
+    background-color: $light-gray;
+    &-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 2rem;
+
+        &__item{
+            padding: 20px;
+            background-color: $w-color;
+            border-radius: 4px;
+            @include transition-ease(.2s);
+            .icon-div{
+                width: 80px;
+                height: 80px;
+                margin-bottom: 5px;
+                border: 2px dotted $p-color;
+                border-radius: 50%;
+                font-size: 1.6rem;
+                // font-weight: 900;
+                color: $p-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 80px;
+            }
+
+            .text{
+                h2{
+                    font-weight: 500;
+                    font-size: 1.3rem;
+                    line-height: 2.5;
+                }
+                p{
+                    color: $gray-color;
+                }
+            }
+
+            &:hover .icon-div{
+                border-color: $w-color;
+                color: $w-color;
+            }
+            &:hover p{
+                color: $w-color;
+            }
+
+            &:hover{
+                background-color: $p-color;
+                color: $w-color;
+                transform: translateY(-10px);
+            }
+        }
+    }
+}
