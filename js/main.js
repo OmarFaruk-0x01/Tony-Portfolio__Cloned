@@ -1,5 +1,7 @@
 window.addEventListener("load", () => {
   document.querySelector(".preloader").style.display = "none";
+    document.querySelector('html').style.overflowY = 'auto'
+  document.querySelector('body').style.overflowY = 'auto'
 });
 
 let menuNodes = document.querySelectorAll(".nav .nav-menus__menu");
